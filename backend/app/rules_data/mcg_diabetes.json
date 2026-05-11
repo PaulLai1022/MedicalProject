@@ -1,0 +1,126 @@
+{
+  "guidelineId": "MCG_M-130_Diabetes_30th_Ed",
+  "version": "2025-03",
+  "core_fields": [
+    { "name": "glucose", "satisfied_by": ["glucose_mg_dl"] },
+    { "name": "ketones", "satisfied_by": ["serum_ketones", "urine_ketones"] },
+    { "name": "acidosis_marker", "satisfied_by": ["arterial_ph", "venous_ph", "bicarbonate", "co2"] }
+  ],
+  "missing_threshold_unknown": 2,
+  "rules": [
+    {
+      "id": "DKA_PH_LT_730",
+      "category": "DKA_INPATIENT",
+      "severity": "admit",
+      "predicate": {
+        "op": "or",
+        "operands": [
+          { "op": "lt", "field": "arterial_ph", "value": 7.30 },
+          { "op": "lt", "field": "venous_ph", "value": 7.30 }
+        ]
+      },
+      "citation": "Acidosis with arterial or venous pH less than 7.30 supports inpatient management (MCG M-130 DKA Criteria).",
+      "clinicalExplanation": "Marked acidosis represents a high-risk metabolic abnormality not suitable for outpatient care."
+    },
+    {
+      "id": "DKA_PH_LE_725",
+      "category": "DKA_INPATIENT_ESCALATION",
+      "severity": "admit",
+      "predicate": {
+        "op": "or",
+        "operands": [
+          { "op": "le", "field": "arterial_ph", "value": 7.25 },
+          { "op": "le", "field": "venous_ph", "value": 7.25 }
+        ]
+      },
+      "citation": "pH ≤ 7.25 indicates severe DKA requiring ICU-level care (MCG M-130).",
+      "clinicalExplanation": "Severe acidosis with pH ≤ 7.25 warrants escalated inpatient monitoring and aggressive treatment."
+    },
+    {
+      "id": "DKA_HCO3_LE_18",
+      "category": "DKA_INPATIENT",
+      "severity": "admit",
+      "predicate": { "op": "le", "field": "bicarbonate", "value": 18 },
+      "citation": "Serum bicarbonate ≤ 18 mEq/L supports DKA diagnosis and inpatient admission (MCG M-130).",
+      "clinicalExplanation": "Low bicarbonate confirms metabolic acidosis consistent with DKA."
+    },
+    {
+      "id": "DKA_HCO3_LT_15",
+      "category": "DKA_INPATIENT_ESCALATION",
+      "severity": "admit",
+      "predicate": { "op": "lt", "field": "bicarbonate", "value": 15 },
+      "citation": "Serum bicarbonate less than 15 mEq/L supports inpatient admission rather than observation (MCG M-130).",
+      "clinicalExplanation": "Severe bicarbonate depletion indicates high-risk DKA requiring inpatient therapy."
+    },
+    {
+      "id": "ANION_GAP_GT_12",
+      "category": "DKA_INPATIENT",
+      "severity": "admit",
+      "predicate": { "op": "gt", "field": "anion_gap", "value": 12 },
+      "citation": "Elevated anion gap > 12 mEq/L supports anion gap metabolic acidosis consistent with DKA (MCG M-130).",
+      "clinicalExplanation": "Anion gap elevation confirms unmeasured acid accumulation typical of ketoacidosis."
+    },
+    {
+      "id": "ALTERED_MENTAL_STATUS",
+      "category": "DKA_INPATIENT_ESCALATION",
+      "severity": "admit",
+      "predicate": { "op": "truthy", "field": "clinical_phrase:AMS" },
+      "citation": "Altered mental status supports inpatient admission over observation care (MCG M-130).",
+      "clinicalExplanation": "AMS suggests physiologic deterioration inappropriate for outpatient/observation management."
+    },
+    {
+      "id": "HYPERGLYCEMIA_GE_200",
+      "category": "HYPERGLYCEMIA_INPATIENT",
+      "severity": "admit",
+      "predicate": { "op": "ge", "field": "glucose_mg_dl", "value": 200 },
+      "citation": "Plasma glucose ≥ 200 mg/dL with ketosis or acidosis supports inpatient management (MCG M-130).",
+      "clinicalExplanation": "Significant hyperglycemia in the context of metabolic derangement requires inpatient stabilization."
+    },
+    {
+      "id": "EUGLYCEMIC_DKA_SGLT2I",
+      "category": "DKA_INPATIENT",
+      "severity": "admit",
+      "predicate": {
+        "op": "and",
+        "operands": [
+          { "op": "truthy", "field": "medication:SGLT2i" },
+          { "op": "le", "field": "bicarbonate", "value": 18 }
+        ]
+      },
+      "citation": "Euglycemic DKA in patients on SGLT2 inhibitors may present with near-normal glucose but significant acidosis (MCG M-130).",
+      "clinicalExplanation": "SGLT2i use can mask hyperglycemia while ketoacidosis progresses; low bicarbonate with SGLT2i history warrants admission."
+    },
+    {
+      "id": "HHS_GLUCOSE_GT_600",
+      "category": "HHS",
+      "severity": "admit",
+      "predicate": { "op": "gt", "field": "glucose_mg_dl", "value": 600 },
+      "citation": "Plasma glucose > 600 mg/dL suggests Hyperosmolar Hyperglycemic State requiring inpatient management (MCG M-130).",
+      "clinicalExplanation": "Extreme hyperglycemia with hyperosmolarity carries high mortality risk and requires aggressive IV fluid resuscitation."
+    },
+    {
+      "id": "AKI_CREATININE_ELEVATED",
+      "category": "DKA_INPATIENT_ESCALATION",
+      "severity": "admit",
+      "predicate": { "op": "ge", "field": "creatinine", "value": 2.0 },
+      "citation": "Elevated creatinine ≥ 2.0 mg/dL suggesting AKI supports inpatient admission for renal monitoring (MCG M-130).",
+      "clinicalExplanation": "Acute kidney injury in the setting of DKA/HHS requires close monitoring of fluid balance and electrolytes."
+    },
+    {
+      "id": "DEHYDRATION",
+      "category": "DKA_INPATIENT",
+      "severity": "admit",
+      "predicate": { "op": "truthy", "field": "clinical_phrase:dehydration" },
+      "citation": "Clinical dehydration in the setting of diabetic emergency supports inpatient IV fluid resuscitation (MCG M-130).",
+      "clinicalExplanation": "Significant volume depletion requires monitored IV rehydration that cannot be safely managed outpatient."
+    },
+    {
+      "id": "INFECTION_TRIGGER",
+      "category": "DKA_INPATIENT",
+      "severity": "admit",
+      "predicate": { "op": "truthy", "field": "clinical_phrase:infection" },
+      "citation": "Concurrent infection as a precipitant of DKA/HHS supports inpatient management for dual treatment (MCG M-130).",
+      "clinicalExplanation": "Infection-triggered diabetic emergencies require simultaneous antimicrobial and metabolic management."
+    }
+  ]
+}

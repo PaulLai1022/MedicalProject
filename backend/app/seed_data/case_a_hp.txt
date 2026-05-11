@@ -1,0 +1,393 @@
+History and Physical
+Date:   02/08/2026  Chief Complaint:  DIABETES ISSUE
+HPI:47M Recently diagnosed diabetes, started on metformin and Jardiance.  Patient has started medication on Friday morning, over the day became more restless unable to sleep.  Yesterday morning unable to tolerate p.o. intake, had 1 episode of vomiting.  This morning had several  episodes of vomiting and ongoing nausea decided to come to the ED for further evaluation.  In the ED noted to be in euglycemic DKA, bicarb less than 7, pH 7.2, glucose 93.  Admission requested for euglycemic DKA likely in the setting of new Jardiance use.
+Review of Systems:
+A 14 point review of systems was assessed and negative except for that per HPI
+Past Medical History:  DiabetesPast Surgical History:Allergies:   No Known Drug Allergies
+Family History:Social History: Denies Tobacco/EtOH/Drugs, Living situation:  lives at home with momCode Status: full code
+Home Medications:
+Home Meds - Dose and Freq - List: No Home Medications Available
+Vital Signs:
+Most Recent Vital Signs
+BP (mm/Hg)
+BP Position/Site
+Heart Rate
+Resp
+Temp (°F)
+SPO2%
+O2 Device
+122/82
+Lying/Right Arm
+99
+18
+97.4 Temporal Scanning
+98 %
+Room Air 21%
+Physical Exam:General:  lethargic, ill-appearing, A&O x3Head: Normocephalic, atraumatic.Eyes: No scleral icterus. No conjunctivitisENT: Moist oropharynx. Dentition intact. Trachea midline.Cardiovascular: S1S2, RRR. No m/r/g. No JVDRespiratory/Chest: CTA b/l. No r/w/r.Abdomen: +BS, soft, non-tenderExtremity: No peripheral edema. Skin: Intact. No rash.Neurologic: No gross neuro deficit
+Lab/Imaging Results:
+Lab Results: Last 24 Hours
+Panel: ACETONE SERUM
+KETONES
+LARGE A
+02/08/2026 10:36
+final
+Panel: ARTERIAL BLOOD GAS STUDY
+Site
+RIGHT RADIAL
+02/08/2026 11:33
+final
+Allen
+Yes
+02/08/2026 11:33
+final
+Mode
+ROOM AIR
+02/08/2026 11:33
+final
+FIO2
+21
+02/08/2026 11:33
+final
+ApH
+7.200 LL
+02/08/2026 11:33
+final
+ApCO2
+19.4 LL
+mmHg
+02/08/2026 11:33
+final
+ApO2
+123.4 H
+mmHg
+02/08/2026 11:33
+final
+AHCO3
+7.4 L
+mmol/L
+02/08/2026 11:33
+final
+ABE
+-18.0 L
+mmol/L
+02/08/2026 11:33
+final
+AsO2
+98.2
+%
+02/08/2026 11:33
+final
+AtHb
+18.4 H
+g/dL
+02/08/2026 11:33
+final
+AO2Hb
+97.2 H
+%
+02/08/2026 11:33
+final
+ACOHb
+0.3
+%
+02/08/2026 11:33
+final
+AMetHb
+0.7
+%
+02/08/2026 11:33
+final
+AHHb
+1.8
+%
+02/08/2026 11:33
+final
+NotifiedBy
+ELVIS RT
+02/08/2026 11:33
+final
+Note_Who
+ED MD
+02/08/2026 11:33
+final
+Note_Time
+602081137
+02/08/2026 11:33
+final
+Crit_Value
+VALUES REPOR
+02/08/2026 11:33
+final
+Panel: CBC
+WBC
+10.40
+cmm
+02/08/2026 10:36
+final
+RBC
+5.57
+cmm
+02/08/2026 10:36
+final
+HEMOGLOBIN
+17.1
+g/dL
+02/08/2026 10:36
+final
+HEMATOCRIT
+52.0 H
+%
+02/08/2026 10:36
+final
+MCV
+93
+fL
+02/08/2026 10:36
+final
+MCH
+31
+pg
+02/08/2026 10:36
+final
+MCHC
+32.9
+g/dL
+02/08/2026 10:36
+final
+RDW
+14.0
+%
+02/08/2026 10:36
+final
+PLATELETS
+203
+cmm
+02/08/2026 10:36
+final
+MPV
+8.9
+fL
+02/08/2026 10:36
+final
+NEUT
+83.40 H
+%
+02/08/2026 10:36
+final
+LYMPH
+7.40 L
+%
+02/08/2026 10:36
+final
+MONO
+8.10 H
+%
+02/08/2026 10:36
+final
+EOS
+0.50 L
+%
+02/08/2026 10:36
+final
+BASO
+0.60
+%
+02/08/2026 10:36
+final
+#NEUT
+8.60 H
+K/uL
+02/08/2026 10:36
+final
+#LYMPH
+0.80 L
+K/uL
+02/08/2026 10:36
+final
+#MONO
+0.80
+K/uL
+02/08/2026 10:36
+final
+#EOS
+0.10
+K/uL
+02/08/2026 10:36
+final
+#BASO
+0.10
+K/uL
+02/08/2026 10:36
+final
+MANUAL DIFF
+NOT INDICATED
+02/08/2026 10:36
+final
+Panel: CMP
+GLUCOSE
+93
+mg/dL
+02/08/2026 10:36
+final
+BUN
+12
+mg/dL
+02/08/2026 10:36
+final
+AGE
+47
+yrs
+02/08/2026 10:36
+final
+CREATININE.
+1.0
+mg/dL
+02/08/2026 10:36
+final
+GFR.
+93
+mL/min
+02/08/2026 10:36
+final
+BUN/CREAT
+12
+02/08/2026 10:36
+final
+SODIUM
+138
+mmol/L
+02/08/2026 10:36
+final
+POTASSIUM
+4.1
+mmol/L
+02/08/2026 10:36
+final
+CHLORIDE
+105
+mmol/L
+02/08/2026 10:36
+final
+CO2
+<7 LL
+mmol/L
+02/08/2026 10:36
+final
+CALLED TO:
+SABRINA RN
+02/08/2026 10:36
+final
+TIME CALLED:
+1112
+02/08/2026 10:36
+final
+CALLED BY:
+MG
+02/08/2026 10:36
+final
+READ BACK:
+Y
+02/08/2026 10:36
+final
+ANION GAP
+NO CALC
+02/08/2026 10:36
+final
+CALCIUM
+9.1
+mg/dL
+02/08/2026 10:36
+final
+TOTAL BILI
+1.6 H
+mg/dL
+02/08/2026 10:36
+final
+TOTAL PROTEIN
+8.3 H
+g/dL
+02/08/2026 10:36
+final
+ALBUMIN
+5.3 H
+g/dL
+02/08/2026 10:36
+final
+SGOT/AST
+44
+U/L
+02/08/2026 10:36
+final
+ALKALINE PHOS
+156 H
+U/L
+02/08/2026 10:36
+final
+SGPT/ALT
+73 H
+U/L
+02/08/2026 10:36
+final
+Panel: D DIMER QUANT
+D-DIMER QUANT.
+0.38
+mcg/mL
+02/08/2026 10:36
+final
+Panel: FREE T3
+FREE T3
+2.76 L
+pg/mL
+02/08/2026 10:36
+final
+Panel: FREE THYROXINE (T4)
+T4 FREE
+1.69
+ng/dL
+02/08/2026 10:36
+final
+Panel: LACTIC ACID
+LACTIC ACID
+1.9
+mmol/L
+02/08/2026 10:36
+final
+Panel: MAGNESIUM SERUM
+MAGNESIUM
+2.1
+mg/dL
+02/08/2026 10:36
+final
+Panel: POC GLUCOSE
+POC GLUCOSE
+98
+mg/dL
+02/08/2026 11:34
+final
+Panel: TROPONIN I QUANT
+TROPONIN I
+<0.012
+ng/mL
+02/08/2026 10:36
+final
+Panel: TSH
+TSH
+0.63
+uIU/mL
+02/08/2026 10:36
+final
+EKG Interpretation:  normal sinus rhythm
+Assessment/Plan:
+# euglycemic DKA  secondary to Jardiance use
+#New onset diabetes
+- ICU admission
+- Influence infusion
+- BMP q4h to monitor gap
+- D5 containing IV fluid -> may need D10 if hypoglycemic
+-  hypoglycemic protocol
+- fingerstick q1h while on insulin
+- Discontinue metformin and Jardiance
+-  we will need DC on injection insulin
+- We will need diabetic teaching
+-DIET NPO while on insulin-DVT PPx LovenoxHistory & Exam: Comprehensive MDM: High Severity of Condition: High Time: 50 minutes  (with more than 50% time spent Face-to-Face counseling/coordinating care for the patient)Level of care for continuing hospitalization: Critical Care Medical justification for Critical Care:  Required frequent nursing interventions, monitoring, +/- frequent neuro check 1-2 hours. diabetic ketoacidosis on insulin infusion
+CERTIFICATION:As the admitting physician responsible for the patient’s care, I certify that this patient requires inpatient hospital services to protect life, prevent serious disability, or avoid death. The patient’s condition was severe and could not be safely managed outside of a hospital setting. Admission was necessary to provide the level of care needed to stabilize the patient and prevent further deterioration. It is my reasonable expectation, based on the patient's current medical condition and the necessary plan of care, that this patient will require hospital care spanning at least two midnights.

@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: theme("colors.ink.50");
+    color: theme("colors.ink.800");
+    font-family: theme("fontFamily.sans");
+    font-feature-settings: "cv11", "ss01", "ss03";
+    letter-spacing: -0.003em;
+  }
+
+  ::selection {
+    background-color: theme("colors.brand.100");
+    color: theme("colors.brand.800");
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: theme("boxShadow.ring");
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: theme("colors.ink.200");
+    border-radius: 999px;
+    border: 2px solid theme("colors.ink.50");
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: theme("colors.ink.300");
+  }
+
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background-color: rgb(255 255 255 / 0.72);
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+  }
+
+  .surface {
+    background-color: #ffffff;
+    border: 1px solid theme("colors.ink.100");
+    border-radius: theme("borderRadius.2xl2");
+    box-shadow: theme("boxShadow.card");
+  }
+}

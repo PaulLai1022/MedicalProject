@@ -1,0 +1,904 @@
+ER Attending: Dr. Nick Kwan
+Chief Complaint: Diabetes issue
+HPI:   this is a 47-year-old male with recent diagnosis of diabetes, on Jardiance metformin, presents ED for 1 day history of inability to take deep breaths, sleep well, nausea, and vomiting. Pt denies chest pain, unilateral leg swelling, fever, chills, bloody emesis, abdominal pain.
+Past Medical History:   Diabetes
+Past Surgical History: patient denies prior surgeries
+Family History: positive for hypertension
+Allergies: no food allergies, drug allergy information is stated in the nursing document.
+Medications: refer to nursing document
+SHx: Lives here in town, denies drug use.
+ROS:
+all pertinent positives and negatives are stated in HPI, all other systems reviewed and are negative.
+VITALS:
+Vital Signs: This Visit
+Date/Time
+BP (mm/Hg)
+BP Position/Site
+MAP (mm/Hg)
+Heart Rate
+Pulse Site
+Resp
+Temp (°C)
+Temp (°F)
+SPO2%
+O2 L/min
+FiO2
+EtCO2 (mm/Hg)
+O2 Device
+Blood Sugar
+Pain Score
+Height (cm)
+Height (in)
+Weight (kg)
+Weight (lbs/ozs)
+Scale
+BMI
+BSA
+Head Cir (cm)
+02/08/2026 15:00
+105/67
+Lying/Right Arm
+80
+98
+Monitor
+18
+100 %
+Room Air 21%
+02/08/2026 12:00
+122/82
+Lying/Right Arm
+95
+99
+Monitor
+18
+36.3 Temporal Scanning
+97.4 Temporal Scanning
+98 %
+Room Air 21%
+02/08/2026 10:37
+130/92
+SITTING/L ARM
+105
+113
+MONITOR
+20
+36.8 ORAL
+98.2 ORAL
+95 %
+84.37 kg
+186.0
+0
+PHYSICAL EXAM
+GENERAL APPEARANCE:  Patient is alert, awake, resting, talking in complete sentences with no acute distress.  Kussmaul breathing.
+HEENT:  PERRLA, EOMI.  No facial trauma or abnormalities.
+NECK:  Supple
+LUNGS:  Clear to auscultation bilaterally. Normal breath sounds. No Wheezing. No Rales. No Rhonchi.
+HEART:  Auscultation: RRR. Normal heart sounds.
+Pulses:  Normal peripheral pulses. Normal cap refill. Normal skin turgor.
+ABDOMEN:  No palpable tenderness, spleen not palpable. No liver tenderness.  Normal bowel sounds.  No guarding, no rebound.
+EXTREMITIES:  5/5 strength in all 4 extremities with full range of motion.  Patient ambulatory.  Good muscle tone.
+NEUROLOGIC:  No sensory or motor exam deficit.  GCS 15. Patient is talking in complete sentences, no slurring, normal articulation.  No facial weakness.  EOMI.  Patient is ambulatory with no gait abnormalities. Cranial nerves ii-xii are intact.
+VASCULAR:  Bilateral radial pulses strong, equal.
+SKIN:  Pink, warm, dry. No pathological skin rash.
+PSYCH: normal mentation, awake alert
+LABS:
+Lab Results: This Visit
+Test
+Results
+Units
+Reference Range
+Ordered
+Collected
+Status
+URINE SOURCE
+RANDOM
+02/08/2026 12:04
+02/08/2026 14:15
+final
+COLOR:
+Colorless
+NORMAL: Yellow
+02/08/2026 12:04
+02/08/2026 14:15
+final
+CLARITY:
+Clear
+NORMAL: < Turbid
+02/08/2026 12:04
+02/08/2026 14:15
+final
+SPEC GRAVITY:
+1.004
+NORMAL: 1.001-1.030
+02/08/2026 12:04
+02/08/2026 14:15
+final
+pH:
+5.0
+NORMAL: 5.0 - 8.0
+02/08/2026 12:04
+02/08/2026 14:15
+final
+GLUCOSE:
+300 A
+NORMAL: < 70 mg/dL
+02/08/2026 12:04
+02/08/2026 14:15
+final
+BILIRUBIN:
+NEG
+NORMAL: < 1+
+02/08/2026 12:04
+02/08/2026 14:15
+final
+KETONE:
+60 A
+NORMAL: < 10 mg/dL
+02/08/2026 12:04
+02/08/2026 14:15
+final
+PROTEIN:
+NEG
+NORMAL: < 30 mg/dL
+02/08/2026 12:04
+02/08/2026 14:15
+final
+.NITRITE
+NEG
+NORMAL: NEG
+02/08/2026 12:04
+02/08/2026 14:15
+final
+BLOOD:
+NEG
+NORMAL: < 1+
+02/08/2026 12:04
+02/08/2026 14:15
+final
+.LEUKOCYTES
+Negative
+NORMAL: < 75 Leu/uL
+02/08/2026 12:04
+02/08/2026 14:15
+final
+UROBILINOGEN:
+Normal
+NORMAL: < 2 mg/dL
+02/08/2026 12:04
+02/08/2026 14:15
+final
+MICROSCOPIC:
+See Below
+02/08/2026 12:04
+02/08/2026 14:15
+final
+.WBC
+none
+NORMAL: < 6-10
+02/08/2026 12:04
+02/08/2026 14:15
+final
+RBC:
+NONE SEEN
+NORMAL: < 6-10
+02/08/2026 12:04
+02/08/2026 14:15
+final
+RENAL EPI:
+none
+NORMAL: < OCC
+02/08/2026 12:04
+02/08/2026 14:15
+final
+SQUAMOUS EPI:
+NONE SEEN
+NORMAL: < FEW
+02/08/2026 12:04
+02/08/2026 14:15
+final
+.BACTERIA
+OCC A
+NORMAL: < OCC
+02/08/2026 12:04
+02/08/2026 14:15
+final
+MUCOUS:
+RARE
+NORMAL: < OCC
+02/08/2026 12:04
+02/08/2026 14:15
+final
+HYALINE CAST:
+NONE SEEN
+NORMAL: < 0-2
+02/08/2026 12:04
+02/08/2026 14:15
+final
+GRANULAR CAST:
+none
+NORMAL: < 0-2
+02/08/2026 12:04
+02/08/2026 14:15
+final
+AMORPHOUS CRYSTAL:
+none
+NORMAL: < OCC
+02/08/2026 12:04
+02/08/2026 14:15
+final
+CALCIUM OXALATE:
+none
+NORMAL: < OCC
+02/08/2026 12:04
+02/08/2026 14:15
+final
+URIC ACID CRYSTAL:
+none
+NORMAL: < OCC
+02/08/2026 12:04
+02/08/2026 14:15
+final
+BUDDING YEAST:
+none
+NORMAL:
+02/08/2026 12:04
+02/08/2026 14:15
+final
+OTHER:
+02/08/2026 12:04
+02/08/2026 14:15
+final
+FENTANYL
+NEGATIVE
+NORMAL:NEGATIVE
+02/08/2026 12:04
+02/08/2026 14:15
+final
+AMPHETAMINES
+NEG
+NORMAL: NEG
+02/08/2026 11:14
+02/08/2026 14:15
+final
+METHAMPHETAMINE
+NEG
+NORMAL: NEG
+02/08/2026 11:14
+02/08/2026 14:15
+final
+BARBITURATES
+NEG
+NORMAL: NEG
+02/08/2026 11:14
+02/08/2026 14:15
+final
+BENZODIAZAPINES
+NEG
+NORMAL: NEG
+02/08/2026 11:14
+02/08/2026 14:15
+final
+COCAINE
+NEG
+NORMAL: NEG
+02/08/2026 11:14
+02/08/2026 14:15
+final
+OPIATES
+NEG
+NORMAL: NEG
+02/08/2026 11:14
+02/08/2026 14:15
+final
+PCP
+NEG
+NORMAL: NEG
+02/08/2026 11:14
+02/08/2026 14:15
+final
+THC
+NEG
+NORMAL: NEG
+02/08/2026 11:14
+02/08/2026 14:15
+final
+MRSA ADMIT SCRN NP
+02/08/2026 12:56
+02/08/2026 12:54
+registered
+CULTURE BLOOD
+02/08/2026 11:14
+02/08/2026 11:45
+registered
+POC GLUCOSE
+98
+mg/dL
+L=74 H=106
+02/08/2026 11:34
+02/08/2026 11:34
+final
+Site
+RIGHT RADIAL
+02/08/2026 11:14
+02/08/2026 11:33
+final
+Allen
+Yes
+02/08/2026 11:14
+02/08/2026 11:33
+final
+Mode
+ROOM AIR
+02/08/2026 11:14
+02/08/2026 11:33
+final
+RespRate
+02/08/2026 11:14
+02/08/2026 11:33
+final
+Vt
+02/08/2026 11:14
+02/08/2026 11:33
+final
+PEEP
+02/08/2026 11:14
+02/08/2026 11:33
+final
+PS
+02/08/2026 11:14
+02/08/2026 11:33
+final
+FIO2
+21
+02/08/2026 11:14
+02/08/2026 11:33
+final
+CPAP
+02/08/2026 11:14
+02/08/2026 11:33
+final
+iTime
+02/08/2026 11:14
+02/08/2026 11:33
+final
+eTime
+02/08/2026 11:14
+02/08/2026 11:33
+final
+ApH
+7.200 LL
+L=7.350 H=7.450
+02/08/2026 11:14
+02/08/2026 11:33
+final
+ApCO2
+19.4 LL
+mmHg
+L=35.0 H=45.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+ApO2
+123.4 H
+mmHg
+L=75.0 H=100.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+AHCO3
+7.4 L
+mmol/L
+L=22.0 H=26.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+ABE
+-18.0 L
+mmol/L
+L=-2.0 H=2.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+AsO2
+98.2
+%
+L=92.0 H=98.5
+02/08/2026 11:14
+02/08/2026 11:33
+final
+AtHb
+18.4 H
+g/dL
+L=14.0 H=17.5
+02/08/2026 11:14
+02/08/2026 11:33
+final
+AO2Hb
+97.2 H
+%
+L=94.0 H=97.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+ACOHb
+0.3
+%
+L=0.0 H=6.9
+02/08/2026 11:14
+02/08/2026 11:33
+final
+AMetHb
+0.7
+%
+L=0.0 H=1.5
+02/08/2026 11:14
+02/08/2026 11:33
+final
+AHHb
+1.8
+%
+L=0.0 H=1.9
+02/08/2026 11:14
+02/08/2026 11:33
+final
+VpH
+L=7.320 H=7.420
+02/08/2026 11:14
+02/08/2026 11:33
+final
+VpCO2
+L=41.0 H=51.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+VpO2
+L=17.0 H=41.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+VHCO3
+L=24.0 H=48.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+VBE
+L=-5.0 H=5.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+VsO2
+L=0.0 H=0.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+VtHb
+L=13.5 H=17.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+VO2Hb
+L=0.0 H=0.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+VCOHb
+L=1.5 H=0.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+VMetHb
+L=0.0 H=2.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+VHHb
+L=0.0 H=0.0
+02/08/2026 11:14
+02/08/2026 11:33
+final
+NotifiedBy
+ELVIS RT
+02/08/2026 11:14
+02/08/2026 11:33
+final
+Note_Who
+ED MD
+02/08/2026 11:14
+02/08/2026 11:33
+final
+Note_Time
+602081137
+02/08/2026 11:14
+02/08/2026 11:33
+final
+Crit_Value
+VALUES REPOR
+02/08/2026 11:14
+02/08/2026 11:33
+final
+CULTURE BLOOD
+02/08/2026 11:14
+02/08/2026 11:30
+registered
+KETONES
+LARGE A
+NORMAL: NEGATIVE
+02/08/2026 10:33
+02/08/2026 10:36
+final
+WBC
+10.40
+cmm
+L=4.50 H=11.00
+02/08/2026 10:33
+02/08/2026 10:36
+final
+RBC
+5.57
+cmm
+L=4.50 H=5.90
+02/08/2026 10:33
+02/08/2026 10:36
+final
+HEMOGLOBIN
+17.1
+g/dL
+L=14.0 H=17.5
+02/08/2026 10:33
+02/08/2026 10:36
+final
+HEMATOCRIT
+52.0 H
+%
+L=41.5 H=50.4
+02/08/2026 10:33
+02/08/2026 10:36
+final
+MCV
+93
+fL
+L=80 H=100
+02/08/2026 10:33
+02/08/2026 10:36
+final
+MCH
+31
+pg
+L=26 H=33
+02/08/2026 10:33
+02/08/2026 10:36
+final
+MCHC
+32.9
+g/dL
+L=32.0 H=36.0
+02/08/2026 10:33
+02/08/2026 10:36
+final
+RDW
+14.0
+%
+L=11.5 H=14.5
+02/08/2026 10:33
+02/08/2026 10:36
+final
+PLATELETS
+203
+cmm
+L=130 H=400
+02/08/2026 10:33
+02/08/2026 10:36
+final
+MPV
+8.9
+fL
+L=7.4 H=10.4
+02/08/2026 10:33
+02/08/2026 10:36
+final
+NEUT
+83.40 H
+%
+L=40.00 H=70.00
+02/08/2026 10:33
+02/08/2026 10:36
+final
+LYMPH
+7.40 L
+%
+L=20.00 H=44.00
+02/08/2026 10:33
+02/08/2026 10:36
+final
+MONO
+8.10 H
+%
+L=1.00 H=8.00
+02/08/2026 10:33
+02/08/2026 10:36
+final
+EOS
+0.50 L
+%
+L=1.00 H=4.00
+02/08/2026 10:33
+02/08/2026 10:36
+final
+BASO
+0.60
+%
+L=0.50 H=1.00
+02/08/2026 10:33
+02/08/2026 10:36
+final
+NRBC
+02/08/2026 10:33
+02/08/2026 10:36
+final
+METAMYELOCYTE
+02/08/2026 10:33
+02/08/2026 10:36
+final
+MYELOCYTE
+02/08/2026 10:33
+02/08/2026 10:36
+final
+PROMYELOCYTE
+02/08/2026 10:33
+02/08/2026 10:36
+final
+BLASTS
+02/08/2026 10:33
+02/08/2026 10:36
+final
+ATYP LYMPH
+02/08/2026 10:33
+02/08/2026 10:36
+final
+#NEUT
+8.60 H
+K/uL
+L=1.80 H=7.70
+02/08/2026 10:33
+02/08/2026 10:36
+final
+#LYMPH
+0.80 L
+K/uL
+L=0.90 H=4.84
+02/08/2026 10:33
+02/08/2026 10:36
+final
+#MONO
+0.80
+K/uL
+L=0.05 H=0.88
+02/08/2026 10:33
+02/08/2026 10:36
+final
+#EOS
+0.10
+K/uL
+L=0.05 H=0.44
+02/08/2026 10:33
+02/08/2026 10:36
+final
+#BASO
+0.10
+K/uL
+L=0.02 H=0.11
+02/08/2026 10:33
+02/08/2026 10:36
+final
+MANUAL DIFF
+NOT INDICATED
+02/08/2026 10:33
+02/08/2026 10:36
+final
+RBC MORPH
+02/08/2026 10:33
+02/08/2026 10:36
+final
+GLUCOSE
+93
+mg/dL
+L=74 H=106
+02/08/2026 10:33
+02/08/2026 10:36
+final
+BUN
+12
+mg/dL
+L=9 H=20
+02/08/2026 10:33
+02/08/2026 10:36
+final
+AGE
+47
+yrs
+02/08/2026 10:33
+02/08/2026 10:36
+final
+CREATININE.
+1.0
+mg/dL
+L=0.6 H=1.2
+02/08/2026 10:33
+02/08/2026 10:36
+final
+GFR.
+93
+mL/min
+02/08/2026 10:33
+02/08/2026 10:36
+final
+BUN/CREAT
+12
+02/08/2026 10:33
+02/08/2026 10:36
+final
+SODIUM
+138
+mmol/L
+L=137 H=145
+02/08/2026 10:33
+02/08/2026 10:36
+final
+POTASSIUM
+4.1
+mmol/L
+L=3.5 H=5.1
+02/08/2026 10:33
+02/08/2026 10:36
+final
+CHLORIDE
+105
+mmol/L
+L=98 H=107
+02/08/2026 10:33
+02/08/2026 10:36
+final
+CO2
+<7 LL
+mmol/L
+L=22 H=30
+02/08/2026 10:33
+02/08/2026 10:36
+final
+CALLED TO:
+SABRINA RN
+02/08/2026 10:33
+02/08/2026 10:36
+final
+TIME CALLED:
+1112
+02/08/2026 10:33
+02/08/2026 10:36
+final
+CALLED BY:
+MG
+02/08/2026 10:33
+02/08/2026 10:36
+final
+READ BACK:
+Y
+02/08/2026 10:33
+02/08/2026 10:36
+final
+ANION GAP
+NO CALC
+02/08/2026 10:33
+02/08/2026 10:36
+final
+CALCIUM
+9.1
+mg/dL
+L=8.4 H=10.2
+02/08/2026 10:33
+02/08/2026 10:36
+final
+TOTAL BILI
+1.6 H
+mg/dL
+L=0.2 H=1.3
+02/08/2026 10:33
+02/08/2026 10:36
+final
+TOTAL PROTEIN
+8.3 H
+g/dL
+L=6.3 H=8.2
+02/08/2026 10:33
+02/08/2026 10:36
+final
+ALBUMIN
+5.3 H
+g/dL
+L=3.5 H=5.0
+02/08/2026 10:33
+02/08/2026 10:36
+final
+SGOT/AST
+44
+U/L
+L=17 H=59
+02/08/2026 10:33
+02/08/2026 10:36
+final
+ALKALINE PHOS
+156 H
+U/L
+L=38 H=126
+02/08/2026 10:33
+02/08/2026 10:36
+final
+SGPT/ALT
+73 H
+U/L
+L=21 H=72
+02/08/2026 10:33
+02/08/2026 10:36
+final
+D-DIMER QUANT.
+0.38
+mcg/mL
+L=0.00 H=0.48
+02/08/2026 10:59
+02/08/2026 10:36
+final
+FREE T3
+2.76 L
+pg/mL
+L=2.77 H=5.27
+02/08/2026 10:34
+02/08/2026 10:36
+final
+T4 FREE
+1.69
+ng/dL
+L=0.78 H=2.19
+02/08/2026 10:34
+02/08/2026 10:36
+final
+LACTIC ACID
+1.9
+mmol/L
+L=0.7 H=2.0
+02/08/2026 11:14
+02/08/2026 10:36
+final
+MAGNESIUM
+2.1
+mg/dL
+L=1.6 H=2.3
+02/08/2026 10:33
+02/08/2026 10:36
+final
+TROPONIN I
+<0.012
+ng/mL
+L=0.000 H=0.030
+02/08/2026 10:33
+02/08/2026 10:36
+final
+TSH
+0.63
+uIU/mL
+L=0.46 H=4.68
+02/08/2026 10:34
+02/08/2026 10:36
+final
+MEDICAL DECISION/PROCEDURES/ER COURSE:
+Patient was placed in the examination room and evaluated by me immediately.
+Patient was reassessed frequently.
+47-year-old male presents ED for nausea, vomiting, inability to sleep.
+On evaluation, patient is tachycardic, afebrile.  With Kussmaul breathing.
+Differential diagnosis include,   Not limited to: thyroid disorder, hyperglycemia, DKA
+considered PE, D-dimer negative.  Doubt PE.
+CBC without leukocytosis, CMP without hyperglycemia, but bicarb undetectable.  ABG with acidosis.  PH 7.2.  TSH within normal limits.  Troponin negative, doubt ACS.  Patient given bicarb, 3 L of normal saline.  Started on insulin drip.  Patient with euglycemic DKA.
+-  Case discussed with Dr. Justin Tran, hospitalist.  requesting for insulin drip and lactate Ringer's with 5% dextrose.
+Critical care time is 35 minutes, included acute intervention of the current medical condition, discussion with multiple physicians, excluding billable procedures that is separate.
+CLINICAL IMPRESSION:
+1.   Euglycemic DKA
+CONDITION:   critical
+DISPOSITION:  admit to ICU
