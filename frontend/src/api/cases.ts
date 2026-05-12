@@ -40,7 +40,7 @@ export async function generateCaseStream(
   { force = false, onStage, signal }: GenerateStreamOptions = {},
 ): Promise<CaseDetail> {
   const token = localStorage.getItem("token");
-  const resp = await fetch(`/api/cases/${caseId}/generate?force=${force}`, {
+  const resp = await fetch(`https://medicalproject-jml5.onrender.com/api/cases/${caseId}/generate?force=${force}`, {
     method: "POST",
     headers: {
       Accept: "text/event-stream",
