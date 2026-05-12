@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://medicalproject-jml5.onrender.com/api",
+  baseURL: "/api",
 });
 
 // Request interceptor: attach JWT
