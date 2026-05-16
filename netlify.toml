@@ -1,0 +1,15 @@
+[build]
+  command = "cd frontend && npm install && npm run build"
+  publish = "frontend/dist"
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://medicalproject-jml5.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+# SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
