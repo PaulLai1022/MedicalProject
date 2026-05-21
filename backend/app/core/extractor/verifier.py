@@ -26,8 +26,9 @@ logger = logging.getLogger(__name__)
 
 
 # Verification window: expand N characters around the reported source_span
-# to tolerate small span reporting drift from the LLM.
-_WINDOW_PADDING = 80
+# to tolerate LLM-reported span drift, lab-table line wrapping, and column gaps.
+# 80 was too tight for real ER lab tables where label and value can be 150+ chars apart.
+_WINDOW_PADDING = 300
 # Numeric tolerance (relative), accounting for float rounding and unit-conversion drift.
 _NUMERIC_REL_TOL = 0.02
 
@@ -114,11 +115,31 @@ class RegexVerifier:
                 detail=f"no regex pattern for lab '{lab.name}'",
             )
 
+        # glucose-in-urine guard: if the source_span is inside a urinalysis section,
+        # the value is urine glucose, not plasma glucose. Mark failed so the rules
+        # engine treats glucose_mg_dl as missing rather than feeding urine glucose
+        # into hyperglycemia / HHS thresholds.
+        if lab.name == "glucose_mg_dl" and self._is_inside_urinalysis(raw_text, lab.source_span.start):
+            return FactVerification(
+                fact_kind="lab", fact_name=lab.name, fact_value=lab.value,
+                status="failed",
+                detail="glucose value located inside a urinalysis section; likely urine glucose, not plasma",
+            )
+
         window = self._window(raw_text, lab.source_span.start, lab.source_span.end)
-        return self._check_numeric_or_qualitative(
+        result = self._check_numeric_or_qualitative(
             kind="lab", name=lab.name, expected=lab.value,
             window=window, pattern=pattern,
         )
+        # Whole-text fallback when the window had no regex hit at all.
+        if result.status == "unverifiable" and result.detail == "no regex hit in source window":
+            full_result = self._check_numeric_or_qualitative(
+                kind="lab", name=lab.name, expected=lab.value,
+                window=raw_text, pattern=pattern,
+            )
+            if full_result.status == "verified":
+                return full_result
+        return result
 
     # ─── vital verification ─────────────────────────────────────────
 
@@ -140,12 +161,27 @@ class RegexVerifier:
         # while the raw text often says "Temp: 98 F". Normalize the regex-captured
         # value via `normalize_temperature` before comparing.
         if vital.name == "temp_c":
-            return self._check_temperature(name=vital.name, expected=vital.value, window=window, pattern=pattern)
+            result = self._check_temperature(name=vital.name, expected=vital.value, window=window, pattern=pattern)
+            if result.status == "unverifiable" and result.detail == "no regex hit in source window":
+                full_result = self._check_temperature(
+                    name=vital.name, expected=vital.value, window=raw_text, pattern=pattern,
+                )
+                if full_result.status == "verified":
+                    return full_result
+            return result
 
-        return self._check_numeric_or_qualitative(
+        result = self._check_numeric_or_qualitative(
             kind="vital", name=vital.name, expected=vital.value,
             window=window, pattern=pattern,
         )
+        if result.status == "unverifiable" and result.detail == "no regex hit in source window":
+            full_result = self._check_numeric_or_qualitative(
+                kind="vital", name=vital.name, expected=vital.value,
+                window=raw_text, pattern=pattern,
+            )
+            if full_result.status == "verified":
+                return full_result
+        return result
 
     def _check_temperature(
         self, *, name: str, expected: float | str, window: str, pattern,
@@ -268,6 +304,38 @@ class RegexVerifier:
         lo = max(0, start - _WINDOW_PADDING)
         hi = min(len(raw_text), end + _WINDOW_PADDING)
         return raw_text[lo:hi]
+
+    @staticmethod
+    def _is_inside_urinalysis(raw_text: str, pos: int) -> bool:
+        """Return True if `pos` falls inside a urinalysis section.
+
+        Strategy: scan the 600 chars *before* pos for UA markers; if a UA marker is
+        the closest preceding section header (i.e. no blood/BMP/CMP marker appears
+        between the UA marker and `pos`), we are still inside the UA section.
+        Mirrors `Extractor._is_urinalysis_context` from extractor.py so both paths
+        agree on what counts as "urine".
+        """
+        if pos <= 0 or pos > len(raw_text):
+            return False
+        prefix = raw_text[max(0, pos - 600):pos].lower()
+        ua_markers = (
+            "urine source", "urinalysis", "ua ",
+            "spec gravity", "urine drug", "color:", "clarity:",
+        )
+        blood_markers = (
+            "bmp", "cmp", "basic metabolic", "comprehensive metabolic",
+            "abg", "vbg", "arterial blood", "venous blood",
+            "poc glucose", "blood sugar", "serum", "blood gas",
+        )
+        ua_pos = -1
+        for marker in ua_markers:
+            p = prefix.rfind(marker)
+            if p > ua_pos:
+                ua_pos = p
+        if ua_pos == -1:
+            return False
+        after_ua = prefix[ua_pos:]
+        return not any(marker in after_ua for marker in blood_markers)
 
 
 def _numbers_close(a: float, b: float) -> bool:

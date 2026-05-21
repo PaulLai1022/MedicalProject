@@ -1,0 +1,252 @@
+{
+  "teacher_feedback_bilingual": [
+    {
+      "id": "urine_vs_blood_glucose",
+      "en": "The output may mix urine glucose with blood/plasma glucose when supporting hyperglycemia criteria.",
+      "zh": "输出可能把尿糖和血糖/血浆葡萄糖混用，并用来支持高血糖入院标准。"
+    },
+    {
+      "id": "overbroad_or_inaccurate_criteria",
+      "en": "Some supporting criteria may not fully apply to the case, even if the overall clinical direction is correct.",
+      "zh": "即使总体临床方向正确，部分支持性规则条件也可能不完全适用于该病例。"
+    },
+    {
+      "id": "differentials_as_suspected",
+      "en": "Differential diagnoses may be placed under suspected conditions even when they are not confirmed or active working diagnoses.",
+      "zh": "鉴别诊断可能被放入 suspected conditions，即使它们并不是已确认诊断或当前工作诊断。"
+    },
+    {
+      "id": "lab_table_unverifiable",
+      "en": "The verification layer may mark findings as unverifiable even though they appear in a lab table.",
+      "zh": "校验层可能把实际出现在检验表格中的结果标记为 unverifiable。"
+    },
+    {
+      "id": "causality_language",
+      "en": "The Revised HPI should use more cautious language when the note does not clearly prove causality.",
+      "zh": "当病历没有明确证明因果关系时，Revised HPI 应使用更谨慎的表达。"
+    }
+  ],
+  "base_url": "http://127.0.0.1:8200",
+  "cases": [
+    {
+      "label": "Case A - ER note only",
+      "case_id": "5cf35c6a-4f27-49be-b9ec-65056aab4e17",
+      "disposition": "Unknown",
+      "decision_path": "5.1_ALL_CORE_MISSING",
+      "mcg_hits": [],
+      "warnings": [
+        "llm_extractor_error",
+        "llm_composer_error"
+      ],
+      "missing_core_fields": [
+        "glucose",
+        "ketones",
+        "acidosis_marker"
+      ],
+      "suspected_conditions": [],
+      "differential_diagnoses": [],
+      "lab_count": 0,
+      "vital_count": 0,
+      "verification_counts": {
+        "verified": 0,
+        "failed": 0,
+        "unverifiable": 0
+      },
+      "expected_disposition": null,
+      "issues": []
+    },
+    {
+      "label": "Case B - ER + H&P",
+      "case_id": "550f3de5-072d-40f3-9405-823d295cdf20",
+      "disposition": "Unknown",
+      "decision_path": "5.1_ALL_CORE_MISSING",
+      "mcg_hits": [],
+      "warnings": [
+        "llm_extractor_error",
+        "llm_composer_error"
+      ],
+      "missing_core_fields": [
+        "glucose",
+        "ketones",
+        "acidosis_marker"
+      ],
+      "suspected_conditions": [],
+      "differential_diagnoses": [],
+      "lab_count": 0,
+      "vital_count": 0,
+      "verification_counts": {
+        "verified": 0,
+        "failed": 0,
+        "unverifiable": 0
+      },
+      "expected_disposition": null,
+      "issues": []
+    },
+    {
+      "label": "Synthetic #1 - urine glucose trap (DKA without plasma glucose)",
+      "case_id": "5cda27fe-0981-4feb-bfbd-5a1bfc24a5e0",
+      "disposition": "Unknown",
+      "decision_path": "5.1_ALL_CORE_MISSING",
+      "mcg_hits": [],
+      "warnings": [
+        "llm_extractor_error",
+        "llm_composer_error"
+      ],
+      "missing_core_fields": [
+        "glucose",
+        "ketones",
+        "acidosis_marker"
+      ],
+      "suspected_conditions": [],
+      "differential_diagnoses": [],
+      "lab_count": 0,
+      "vital_count": 0,
+      "verification_counts": {
+        "verified": 0,
+        "failed": 0,
+        "unverifiable": 0
+      },
+      "expected_disposition": "Admit",
+      "issues": [
+        {
+          "id": "expected_disposition_mismatch",
+          "severity": "error",
+          "en": "Expected disposition 'Admit' but got 'Unknown'.",
+          "zh": "预期 disposition 为 'Admit'，实际为 'Unknown'。",
+          "evidence": {
+            "expected": "Admit",
+            "actual": "Unknown"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Synthetic #2 - pure hyperglycemia, no ketosis or acidosis",
+      "case_id": "5c6e1615-192a-4a85-add0-de4954ebc2a4",
+      "disposition": "Unknown",
+      "decision_path": "5.1_ALL_CORE_MISSING",
+      "mcg_hits": [],
+      "warnings": [
+        "llm_extractor_error",
+        "llm_composer_error"
+      ],
+      "missing_core_fields": [
+        "glucose",
+        "ketones",
+        "acidosis_marker"
+      ],
+      "suspected_conditions": [],
+      "differential_diagnoses": [],
+      "lab_count": 0,
+      "vital_count": 0,
+      "verification_counts": {
+        "verified": 0,
+        "failed": 0,
+        "unverifiable": 0
+      },
+      "expected_disposition": "Unknown",
+      "issues": []
+    },
+    {
+      "label": "Synthetic #3 - differential-heavy chest pain note",
+      "case_id": "01f7ebd7-4756-4a79-bafd-3abddb60a47b",
+      "disposition": "Unknown",
+      "decision_path": "5.1_ALL_CORE_MISSING",
+      "mcg_hits": [],
+      "warnings": [
+        "llm_extractor_error",
+        "llm_composer_error"
+      ],
+      "missing_core_fields": [
+        "glucose",
+        "ketones",
+        "acidosis_marker"
+      ],
+      "suspected_conditions": [],
+      "differential_diagnoses": [],
+      "lab_count": 0,
+      "vital_count": 0,
+      "verification_counts": {
+        "verified": 0,
+        "failed": 0,
+        "unverifiable": 0
+      },
+      "expected_disposition": "Unknown",
+      "issues": []
+    },
+    {
+      "label": "Synthetic #4 - DKA with UTI (no explicit causal phrasing in source)",
+      "case_id": "1e5d07ff-0cc1-4b6c-a13d-1050552cbda1",
+      "disposition": "Unknown",
+      "decision_path": "5.1_ALL_CORE_MISSING",
+      "mcg_hits": [],
+      "warnings": [
+        "llm_extractor_error",
+        "llm_composer_error"
+      ],
+      "missing_core_fields": [
+        "glucose",
+        "ketones",
+        "acidosis_marker"
+      ],
+      "suspected_conditions": [],
+      "differential_diagnoses": [],
+      "lab_count": 0,
+      "vital_count": 0,
+      "verification_counts": {
+        "verified": 0,
+        "failed": 0,
+        "unverifiable": 0
+      },
+      "expected_disposition": "Admit",
+      "issues": [
+        {
+          "id": "expected_disposition_mismatch",
+          "severity": "error",
+          "en": "Expected disposition 'Admit' but got 'Unknown'.",
+          "zh": "预期 disposition 为 'Admit'，实际为 'Unknown'。",
+          "evidence": {
+            "expected": "Admit",
+            "actual": "Unknown"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Synthetic #5 - ankle sprain (out-of-domain → Unknown)",
+      "case_id": "4a9beeb6-5af8-40f2-a372-d140c5d4db7a",
+      "disposition": "Unknown",
+      "decision_path": "5.1_ALL_CORE_MISSING",
+      "mcg_hits": [],
+      "warnings": [
+        "llm_extractor_error",
+        "llm_composer_error"
+      ],
+      "missing_core_fields": [
+        "glucose",
+        "ketones",
+        "acidosis_marker"
+      ],
+      "suspected_conditions": [],
+      "differential_diagnoses": [],
+      "lab_count": 0,
+      "vital_count": 0,
+      "verification_counts": {
+        "verified": 0,
+        "failed": 0,
+        "unverifiable": 0
+      },
+      "expected_disposition": "Unknown",
+      "issues": []
+    }
+  ],
+  "summary": {
+    "total_issues": 2,
+    "by_id": {
+      "expected_disposition_mismatch": 2
+    },
+    "by_severity": {
+      "error": 2
+    }
+  }
+}

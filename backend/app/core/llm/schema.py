@@ -110,6 +110,7 @@ class ExtractedFactsSchema(BaseModel):
     chief_complaint: str
     hpi_summary: str
     suspected_conditions: list[str]
+    differential_diagnoses: list[str] = Field(default_factory=list)
     labs: list[LabFact]
     vitals: list[VitalFact]
     symptoms: list[SymptomFact]

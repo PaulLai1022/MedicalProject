@@ -9,7 +9,8 @@ import re
 # ---------- Labs ----------
 
 PH_PATTERN = re.compile(
-    r"\b(?:A\.?\s*pH|V\.?\s*pH|ApH|VpH|arterial\s+pH|venous\s+pH|pH)\b"
+    # Allow ApH7.200 / VpH7.23 / AHCO3 7.4 styles where label and value have no separator.
+    r"(?:A\.?\s*pH|V\.?\s*pH|ApH|VpH|arterial\s+pH|venous\s+pH|pH)"
     r"(?:\s*\([^)]*\))*"
     r"\s*[:=]?\s*"
     r"(\d\.\d{1,3})",
@@ -17,7 +18,8 @@ PH_PATTERN = re.compile(
 )
 
 BICARBONATE_PATTERN = re.compile(
-    r"\b(?:AHCO3|VHCO3|V\s+HCO3|A\s+HCO3|HCO3|bicarbonate|bicarb|CO2\s*\(bicarb\))\b"
+    # Cover AHCO37.4 / VHCO3 9 / HCO3: 18 / bicarb=22 styles, including no-space cases.
+    r"(?:AHCO3|VHCO3|V\s+HCO3|A\s+HCO3|HCO3|bicarbonate|bicarb|CO2\s*\(bicarb\))"
     r"(?:\s*\([^)]*\))*"
     r"\s*[:=<>]?\s*"
     r"(\d+\.?\d*)",

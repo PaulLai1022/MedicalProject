@@ -116,6 +116,16 @@ class NarrativeComposer:
                     sentence.reason_clinical,
                     "Potentially conflicts with missing core fields from rules engine.",
                 )
+            # Soften any unjustified strong-causal language. If the LLM says "due to X"
+            # but the original note never used a causal connective, rewrite to a hedged
+            # "in the setting of X" and flag the rewrite in reasonClinical.
+            softened, was_softened = _soften_causal_language(sentence.text, raw_text)
+            if was_softened:
+                sentence.text = softened
+                sentence.reason_clinical = _append_note(
+                    sentence.reason_clinical,
+                    "Causal phrasing softened — original note does not state causality verbatim.",
+                )
             sentence.sources = [source for source in sentence.sources if source and source in raw_text]
 
         if rule_result.disposition == "Unknown":
@@ -177,3 +187,45 @@ def _append_note(text: str, note: str) -> str:
     if note in text:
         return text
     return f"{text} {note}"
+
+
+# Strong-causal connectives we soften when the source note does not document them.
+# Each tuple is (regex pattern matching the strong form, hedged replacement).
+_CAUSAL_REWRITES: tuple[tuple[str, str], ...] = (
+    (r"\bcaused by\b", "in the setting of"),
+    (r"\bdue to\b", "in the setting of"),
+    (r"\btriggered by\b", "in the setting of"),
+    (r"\bsecondary to\b", "in the setting of"),
+    (r"\bresulting from\b", "in the setting of"),
+    (r"\bas a precipitant\b", "as an associated factor"),
+)
+_CAUSAL_PROBE_TERMS = (
+    "caused by", "due to", "triggered by", "secondary to",
+    "resulting from", "as a precipitant", "precipitating factor",
+)
+
+
+def _soften_causal_language(sentence: str, raw_text: str) -> tuple[str, bool]:
+    """Rewrite unjustified strong-causal connectives in `sentence` to hedged forms.
+
+    Returns (possibly_rewritten_sentence, was_modified). If the original note
+    contains ANY explicit causal connective, we trust the LLM's phrasing and
+    leave it alone. Otherwise we replace strong causal forms with hedged ones
+    so the Revised HPI does not assert causality the source does not support.
+    """
+    import re as _re
+
+    if not sentence:
+        return (sentence, False)
+    source_lowered = raw_text.lower()
+    if any(term in source_lowered for term in _CAUSAL_PROBE_TERMS):
+        return (sentence, False)
+
+    new_sentence = sentence
+    modified = False
+    for pattern, replacement in _CAUSAL_REWRITES:
+        candidate, n = _re.subn(pattern, replacement, new_sentence, flags=_re.IGNORECASE)
+        if n > 0:
+            new_sentence = candidate
+            modified = True
+    return (new_sentence, modified)

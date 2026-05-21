@@ -72,9 +72,24 @@
       "id": "HYPERGLYCEMIA_GE_200",
       "category": "HYPERGLYCEMIA_INPATIENT",
       "severity": "admit",
-      "predicate": { "op": "ge", "field": "glucose_mg_dl", "value": 200 },
+      "predicate": {
+        "op": "and",
+        "operands": [
+          { "op": "ge", "field": "glucose_mg_dl", "value": 200 },
+          {
+            "op": "or",
+            "operands": [
+              { "op": "le", "field": "bicarbonate", "value": 18 },
+              { "op": "lt", "field": "arterial_ph", "value": 7.30 },
+              { "op": "lt", "field": "venous_ph", "value": 7.30 },
+              { "op": "truthy", "field": "serum_ketones" },
+              { "op": "truthy", "field": "urine_ketones" }
+            ]
+          }
+        ]
+      },
       "citation": "Plasma glucose ≥ 200 mg/dL with ketosis or acidosis supports inpatient management (MCG M-130).",
-      "clinicalExplanation": "Significant hyperglycemia in the context of metabolic derangement requires inpatient stabilization."
+      "clinicalExplanation": "Significant hyperglycemia in the context of metabolic derangement requires inpatient stabilization. Hyperglycemia alone, without ketosis or acidosis, does not satisfy this admission criterion."
     },
     {
       "id": "EUGLYCEMIC_DKA_SGLT2I",
@@ -94,9 +109,25 @@
       "id": "HHS_GLUCOSE_GT_600",
       "category": "HHS",
       "severity": "admit",
-      "predicate": { "op": "gt", "field": "glucose_mg_dl", "value": 600 },
-      "citation": "Plasma glucose > 600 mg/dL suggests Hyperosmolar Hyperglycemic State requiring inpatient management (MCG M-130).",
-      "clinicalExplanation": "Extreme hyperglycemia with hyperosmolarity carries high mortality risk and requires aggressive IV fluid resuscitation."
+      "predicate": {
+        "op": "and",
+        "operands": [
+          { "op": "gt", "field": "glucose_mg_dl", "value": 600 },
+          {
+            "op": "not",
+            "operand": {
+              "op": "or",
+              "operands": [
+                { "op": "truthy", "field": "serum_ketones" },
+                { "op": "truthy", "field": "urine_ketones" },
+                { "op": "truthy", "field": "clinical_phrase:DKA" }
+              ]
+            }
+          }
+        ]
+      },
+      "citation": "Plasma glucose > 600 mg/dL without significant ketosis suggests Hyperosmolar Hyperglycemic State requiring inpatient management (MCG M-130).",
+      "clinicalExplanation": "Extreme hyperglycemia with hyperosmolarity (and minimal ketosis) carries high mortality risk and requires aggressive IV fluid resuscitation. If ketosis is present, DKA/mixed DKA-HHS rules apply instead."
     },
     {
       "id": "AKI_CREATININE_ELEVATED",

@@ -27,9 +27,15 @@ SYSTEM_PROMPT = """You are a clinical fact extractor. Your job is to read an uns
 5. **`labs` AND `vitals` REQUIRE NUMERIC OR STANDARD QUALITATIVE VALUES**: Labs accept numeric (e.g. 412.0) or standard qualitative codes (LARGE, MODERATE, SMALL, TRACE, NEG, POS). Vitals must be numeric.
 6. **UNITS**: Always include a `unit` string. For qualitative lab results, use empty string `""`.
 7. **DEDUPLICATION**: If the same value appears multiple times (e.g. repeat glucose), include each occurrence as a separate fact with its own source_span.
+8. **CONFIRMED vs DIFFERENTIAL — STRICT SEPARATION**:
+   - `suspected_conditions` is ONLY for ACTIVE WORKING DIAGNOSES the clinician is currently treating or has documented as the leading impression. Look for them in sections labelled Assessment, Impression, Final Diagnosis, Diagnoses, Plan, or where the note clearly states the patient HAS / IS BEING TREATED FOR that condition.
+   - `differential_diagnoses` is for anything the note frames as a possibility, alternative, or rule-out. Move a diagnosis here if it appears under headings like "Differential diagnosis", "Diagnostic considerations", "Considered", or near hedge words: "possible", "concern for", "concern for possible", "suspected", "suspicion", "may represent", "cannot rule out", "rule out", "r/o", "less likely", "unlikely", "ruled out".
+   - A diagnosis appearing in BOTH a confirmed section AND a hedge context goes to `suspected_conditions` (confirmed wins).
+   - When in doubt → put it in `differential_diagnoses`, never both.
+9. **`urine_glucose` vs `glucose_mg_dl`**: glucose values reported inside a urinalysis section (after headings like "Urinalysis", "Urine Source", "Spec Gravity", "Color:") must use `name="urine_glucose"`. Only plasma / serum / POC glucose may use `name="glucose_mg_dl"`. If unsure, prefer `urine_glucose`.
 
 ## FIELD NAMING (use snake_case, stable across cases):
-- `labs[].name`: glucose_mg_dl, arterial_ph, venous_ph, bicarbonate, serum_ketones, urine_ketones, anion_gap, wbc, creatinine, bun, sodium, potassium, chloride, co2, lactate, troponin, hemoglobin, gfr (extend if needed)
+- `labs[].name`: glucose_mg_dl, urine_glucose, arterial_ph, venous_ph, bicarbonate, serum_ketones, urine_ketones, anion_gap, wbc, creatinine, bun, sodium, potassium, chloride, co2, lactate, troponin, hemoglobin, gfr (extend if needed)
 - `vitals[].name`: hr, rr, temp_c, bp_systolic, bp_diastolic, spo2
 - `symptoms[].name`: snake_case slug (e.g. fever, rlq_pain, ams, kussmaul_breathing, dehydration, leukocytosis)
 - `medications[].name`: drug name as written in the note (preserve case for brand names like Jardiance)
@@ -39,7 +45,8 @@ Return a valid JSON object with EXACTLY these fields (all required, lists may be
 {
   "chief_complaint": "string - the patient's main complaint as a short phrase",
   "hpi_summary": "string - 1-2 sentence summary of HPI",
-  "suspected_conditions": ["array of suspected/confirmed diagnoses mentioned in the note"],
+  "suspected_conditions": ["array - ONLY active working diagnoses the clinician is treating"],
+  "differential_diagnoses": ["array - possibilities, alternatives, rule-outs, hedge-worded diagnoses"],
   "labs": [{"name": "...", "value": <number or qualitative-string>, "unit": "...", "source_span": {"start": 0, "end": 0}}],
   "vitals": [{"name": "...", "value": <number>, "unit": "...", "source_span": {"start": 0, "end": 0}}],
   "symptoms": [{"name": "...", "description": "...", "source_span": {"start": 0, "end": 0}}],
@@ -49,13 +56,15 @@ Return a valid JSON object with EXACTLY these fields (all required, lists may be
   "history": ["array of relevant past medical history items"]
 }
 
-## REQUIRED FIELDS (all 10 top-level keys are MANDATORY):
-chief_complaint, hpi_summary, suspected_conditions, labs, vitals, symptoms, medications, imaging_findings, interventions, history
+## REQUIRED FIELDS (all 11 top-level keys are MANDATORY):
+chief_complaint, hpi_summary, suspected_conditions, differential_diagnoses, labs, vitals, symptoms, medications, imaging_findings, interventions, history
 
 If the note contains no facts of a given type, return `[]` for that array (or `""` for the two string fields). NEVER omit a key.
 
 ## Pre-output checklist (mentally verify before returning):
-- [ ] All 10 top-level keys present
+- [ ] All 11 top-level keys present (including `differential_diagnoses`)
+- [ ] Every hedge-worded or rule-out diagnosis is in `differential_diagnoses`, NOT in `suspected_conditions`
+- [ ] Every glucose inside a urinalysis section uses `name="urine_glucose"`, never `glucose_mg_dl`
 - [ ] Each lab has: name, value, unit, source_span{start,end}
 - [ ] Each vital has: name, value, unit, source_span{start,end}
 - [ ] Each symptom has: name, description, source_span{start,end}
@@ -85,6 +94,7 @@ def empty_facts() -> ExtractedFactsSchema:
         chief_complaint="",
         hpi_summary="",
         suspected_conditions=[],
+        differential_diagnoses=[],
         labs=[],
         vitals=[],
         symptoms=[],
@@ -135,6 +145,11 @@ class LLMExtractor:
         """Parse the LLM JSON response and run Pydantic validation."""
         try:
             data = json.loads(raw_response)
+            # Tolerate older LLM outputs that still omit `differential_diagnoses`.
+            # The field is required in the schema, but we'd rather backfill an empty
+            # list than discard a full-formed labs/vitals payload over a single key.
+            if isinstance(data, dict) and "differential_diagnoses" not in data:
+                data["differential_diagnoses"] = []
             return ExtractedFactsSchema.model_validate(data)
         except (json.JSONDecodeError, ValidationError) as e:
             logger.warning("LLMExtractor response parse failed: %s", str(e)[:300])

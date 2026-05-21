@@ -279,6 +279,7 @@ def _camel_facts(extracted_facts_json: str | None) -> dict | None:
         "chiefComplaint": data.get("chief_complaint", ""),
         "hpiSummary": data.get("hpi_summary", ""),
         "suspectedConditions": data.get("suspected_conditions", []),
+        "differentialDiagnoses": data.get("differential_diagnoses", []),
         "labs": data.get("labs", []),
         "vitals": data.get("vitals", []),
         "symptoms": data.get("symptoms", []),
@@ -308,6 +309,7 @@ def _facts_to_dict(verified: VerifiedFacts) -> dict:
         "chief_complaint": facts.chief_complaint,
         "hpi_summary": facts.hpi_summary,
         "suspected_conditions": list(facts.suspected_conditions),
+        "differential_diagnoses": list(facts.differential_diagnoses),
         "labs": [
             {
                 "name": lab.name, "value": lab.value, "unit": lab.unit,

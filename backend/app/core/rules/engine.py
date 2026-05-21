@@ -91,6 +91,42 @@ _DRUG_TO_CLASS: dict[str, str] = {
     "ertugliflozin": "SGLT2i",
 }
 
+# Hedge / differential markers — if a symptom description contains any of these,
+# the LLM was likely capturing a differential or rule-out, not an active finding.
+# Filtering them out prevents INFECTION_TRIGGER / DEHYDRATION from firing on
+# "possible sepsis" or "concern for dehydration" style hedge language.
+_DIFFERENTIAL_MARKERS = (
+    "differential",
+    "considered",
+    "less likely",
+    "unlikely",
+    "ruled out",
+    "rule out",
+    "r/o",
+    "diagnostic considerations",
+    "possible",
+    "concern for",
+    "concern for possible",
+    "suspected",
+    "suspicion",
+    "cannot rule out",
+    "may represent",
+    "vs.",
+    "versus",
+)
+
+
+def _is_differential_or_negated(text: str) -> bool:
+    """Return True if `text` contains a differential / rule-out / hedge marker.
+
+    Used to suppress symptom-derived clinical_phrase context entries that were
+    captured from a differential-diagnosis section rather than an active finding.
+    """
+    if not text:
+        return False
+    lowered = text.lower()
+    return any(marker in lowered for marker in _DIFFERENTIAL_MARKERS)
+
 
 class RulesEngine:
     """MCG rules engine."""
@@ -162,8 +198,14 @@ class RulesEngine:
             if items and isinstance(items[0].value, (int, float)):
                 ctx[name] = items[0].value
 
-        # Symptoms → clinical_phrase:XXX namespace (canonicalized via alias table)
+        # Symptoms → clinical_phrase:XXX namespace (canonicalized via alias table).
+        # Skip symptoms whose description / name is wrapped in differential or hedge language
+        # ("possible sepsis", "concern for dehydration", "r/o infection") so admission rules
+        # like INFECTION_TRIGGER / DEHYDRATION do not fire on rule-outs.
         for s in symptoms:
+            descriptive_text = (s.description or "") + " " + (s.name or "")
+            if _is_differential_or_negated(descriptive_text):
+                continue
             slug = s.name.lower().strip().replace(" ", "_")
             canonical = _PHRASE_ALIASES.get(slug, s.name)
             ctx[f"clinical_phrase:{canonical}"] = True
